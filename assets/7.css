@@ -1,0 +1,40 @@
+/* Фон */
+#background_open{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#background_close{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Отец */
+#door_open{
+    left: 46.5%;
+    top: 0;
+    width: 49.79%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#door_close{
+    left: 38%;
+    top: 0;
+    width: 57.4%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Для открытия двери */
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}

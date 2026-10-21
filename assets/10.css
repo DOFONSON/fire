@@ -1,0 +1,95 @@
+/* Фон */
+#background_10{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Общее для осколков */
+img[id^="oskolok"] {
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
+    pointer-events: none;
+}
+
+/* Лед */
+#oskolok_1{
+    top: 0;
+    left: 48.7%;
+    width: 40.3%;
+}
+
+#oskolok_2{
+    top: 0;
+    right: 0;
+    width: 34.7%;
+}
+
+#oskolok_3{
+    top: 35.65%;
+    right: 0;
+    width: 44.25%;
+}
+
+#oskolok_4{
+    bottom: 0;
+    right: 0;
+    width: 52.7%;
+}
+
+#oskolok_5{
+    bottom: 0;
+    left: 0;
+    width: 61.72%;
+}
+
+#oskolok_6{
+    top: 38.28%;
+    left: 39.75%;
+    width: 11.95%;
+}
+
+#oskolok_7{
+    top: 38.2%;
+    left: 0;
+    width: 35.67%;
+}
+
+#oskolok_8{
+    top: 0;
+    left: 0;
+    width: 31.52%;
+}
+
+#oskolok_9{
+    top: 0;
+    left: 0;
+    width: 47.34%;    
+}
+
+#oskolok_10{
+    top: 0;
+    left: 25.9%;
+    width: 33.99%;    
+}
+
+#oskolok_11{
+    top: 28.3%;
+    left: 40.2%;
+    width: 21.46%;  
+}
+
+/* Анимация */
+
+/* Небольшое расхождение оскольков до 4 кликов */
+img[id^="oskolok"].crack-phase {
+    transform: translate(var(--tx, 0px), var(--ty, 0px)) rotate(var(--rot, 0deg));
+}
+
+/* Полное расхождение оскольков после 5 кликов */
+img[id^="oskolok"].explode-phase {
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+    opacity: 0; 
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s ease;
+}

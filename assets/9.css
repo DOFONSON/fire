@@ -1,0 +1,51 @@
+/* Фон */
+#son_back, 
+#father_back{
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Отец */
+#father_back{
+    transition: -webkit-mask-position 4s ease, mask-position 4s ease;
+    /* нахождение маски */
+    -webkit-mask-position: 100% 0;   
+    mask-position: 100% 0;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 40%,
+      transparent 60%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 40%,
+      transparent 60%,
+      transparent 100%
+    );
+
+    /* размер маски */
+    -webkit-mask-size: 300% 100%;
+    mask-size: 300% 100%;
+
+    /* повтороение маски*/
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+#father_back.hidden{
+    /* маска для плавного перехода*/
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+}
+
+#father_back.visible{
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+}
+
+
+
