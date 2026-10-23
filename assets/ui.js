@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const UI_CONFIG = {
         totalStandardPages: 12, // кол-во стандартных страниц
@@ -132,22 +132,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         pages.forEach(page => {
 
-        if (UI_CONFIG.hiddenPages && UI_CONFIG.hiddenPages.includes(page.filename)) {
-          return;
-        }
+            if (UI_CONFIG.hiddenPages && UI_CONFIG.hiddenPages.includes(page.filename)) {
+                return;
+            }
 
-        const isActive = page.filename === currentFilename;
-        const link = el('a', '', { draggable: 'false', href: page.filename });
-        const pageDiv = el('div', `content__page ${isActive ? 'active' : ''}`, {});
+            const isActive = page.filename === currentFilename;
+            const link = el('a', '', { draggable: 'false', href: page.filename });
+            const pageDiv = el('div', `content__page ${isActive ? 'active' : ''}`, {});
 
-        pageDiv.appendChild(el('img', 'content__play', { draggable: 'false', src: './svg/UI/tocPlay.svg' }));
-        pageDiv.appendChild(el('span', '', {}, [page.label]));
-        pageDiv.appendChild(el('img', 'preview', {
-          draggable: 'false', id: getPageId(page.filename), src: getImagePath(page.image), srcset: `${getImagePath(page.image)} 2x`
-        }));
+            pageDiv.appendChild(el('img', 'content__play', { draggable: 'false', src: './svg/UI/tocPlay.svg' }));
+            pageDiv.appendChild(el('span', '', {}, [page.label]));
+            pageDiv.appendChild(el('img', 'preview', {
+                draggable: 'false', id: getPageId(page.filename), src: getImagePath(page.image), srcset: `${getImagePath(page.image)} 2x`
+            }));
 
-        link.appendChild(pageDiv);
-        content.appendChild(link);
+            link.appendChild(pageDiv);
+            content.appendChild(link);
         });
 
         toc.appendChild(content);
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             el('img', '', { draggable: 'false', src: './svg/UI/arrowUp.svg', alt: 'Наверх' })
         ]);
         const nextBtn = el('button', 'button-black bottom', { id: 'UI__next-page-button' }, [
-            el('span','', {}, ['ЧИТАТЬ ДАЛЕЕ']),
+            el('span', '', {}, ['ЧИТАТЬ ДАЛЕЕ']),
             el('img', '', { draggable: 'false', src: './svg/UI/arrowRight.svg', alt: 'Вперед' })
         ]);
 
@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function navigate(direction) {
+        console.log(direction);
         const pages = getSortedPages();
         const currentFilename = getCurrentFilename();
         const currentIndex = pages.findIndex(p => p.filename === currentFilename);
@@ -212,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const targetIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
+        console.log(targetIndex);
         if (targetIndex >= 0 && targetIndex < pages.length) {
             window.location.href = pages[targetIndex].filename;
         }
@@ -220,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     function scrollToBottom() { window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }
 
-    window.menuToggle = function() {
+    window.menuToggle = function () {
         const sidebar = document.getElementById('UI__sidebar');
         if (sidebar) sidebar.classList.toggle('open');
     };
@@ -256,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('hint-modal-close').addEventListener('click', closeHintModal);
     document.getElementById('hint-modal-overlay').addEventListener('click', closeHintModal);
 
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         const modal = document.getElementById('UI__hint-modal');
 
         if (e.key === 'Escape') {
