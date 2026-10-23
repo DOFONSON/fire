@@ -1,0 +1,82 @@
+#scene {
+    position: relative;
+    overflow: hidden;
+}
+
+#overflow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Общие настройки сцены */
+#background_light,
+#background_dark,
+.son {
+    position: absolute;
+    display: block;
+    max-width: none;
+    pointer-events: none;
+}
+
+/* Фоны */
+#background_light,
+#background_dark {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: opacity 1.2s ease, filter 1.2s ease;
+}
+
+#background_light {
+    z-index: 1;
+    opacity: 1;
+}
+
+#background_dark {
+    z-index: 2;
+    opacity: 0;
+    filter: brightness(0.4);
+}
+
+/* Нажатие на сцену выключает свет */
+#scene.lights-off #background_dark {
+    opacity: 1;
+}
+
+/* Изображения сына */
+.son {
+    z-index: 3;
+    left: 25%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#son_1 {
+    opacity: 1;
+}
+
+/* Переключение положения головы */
+#scene.head-turned #son_1 {
+    opacity: 0;
+}
+
+#scene.head-turned #son_2 {
+    opacity: 1;
+}
+
+/* Затемнение светлого фона при выключении света */
+#scene.lights-off #background_light {
+    opacity: 0;
+}
+
+/* Курсор показывает, что сцену можно нажать */
+#scene {
+    cursor: pointer;
+}
