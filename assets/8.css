@@ -51,3 +51,29 @@
     z-index: 3;
     cursor: pointer;
 }
+
+/* Дрожание руки */
+.hand_shake {
+    animation: handShake 0.15s infinite;
+}
+
+@keyframes handShake {
+    0% { 
+        transform: translate(1px, 1px) rotate(0deg); 
+    }
+    20% { 
+        transform: translate(-2px, 0px) rotate(0.5deg); 
+    }
+    40% { 
+        transform: translate(2px, -1px) rotate(-0.5deg); 
+    }
+    60% { 
+        transform: translate(-1px, 2px) rotate(0deg); 
+    }
+    80% { 
+        transform: translate(1px, -2px) rotate(0.5deg); 
+    }
+    100% { 
+        transform: translate(-1px, 1px) rotate(0deg); 
+    }
+}

@@ -1,0 +1,37 @@
+
+/* глаз закрытый */
+#eye_close{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* глаз открытый */
+#eye_open{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+/* Изображения маска для нажатия именно на глаз */
+#eye_mask{
+    left: 10%;
+    top: 37%;
+    width: 79.59%;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+/* Для открытия глаза */
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+

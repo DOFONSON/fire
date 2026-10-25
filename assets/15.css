@@ -1,0 +1,38 @@
+
+/* В капюшоне */
+#back_close{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Без капюшона */
+#back_open{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Изображения маска для нажатия именно на глаз */
+#mask{
+    left: 20.5%;
+    top: 2.1%;
+    width: 13.49%;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+/* Для снятия капюшона */
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+
