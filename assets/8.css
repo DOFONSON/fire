@@ -12,7 +12,9 @@
     top: 48%;
     width: 40.73%;
     z-index: 3;
-    /* visibility: hidden; */
+    /* уровень заполнения */
+    --fill: 0%;                
+    clip-path: inset(calc(100% - var(--fill)) 0 0 0);
 }
 
 /* Рука сзади */
@@ -21,7 +23,6 @@
     top: 48.5%;
     width: 48.85%;
     z-index: 2;
-    cursor: pointer;
 }
 
 /* Рука */
@@ -30,7 +31,6 @@
     top: 41%;
     width: 70.57%;
     z-index: 4;
-    cursor: pointer;
 }
 
 /* Кувшин */
@@ -38,20 +38,28 @@
     left: 37%;
     bottom: 6.7%;
     width: 100%;
-    transform: rotate(-56.38deg);
-    z-index: 4;
-    cursor: pointer;
+    --x: 0px;
+    --y: 0px;
+    transform: translate(var(--x), var(--y)) rotate(-56.38deg);
+    z-index: 5;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
 }
 
 /* Струя */
 #struia{
-    left: 12%;
-    top: 28%;
+    left: 0;
+    top: 0;
     width: 60%;
     z-index: 3;
-    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease-out; 
+    will-change: opacity, left, top;
 }
 
+/* Анимация */
 /* Дрожание руки */
 .hand_shake {
     animation: handShake 0.15s infinite;
@@ -59,21 +67,40 @@
 
 @keyframes handShake {
     0% { 
-        transform: translate(1px, 1px) rotate(0deg); 
+        transform: translate(2px, 2px) rotate(0deg); 
     }
     20% { 
-        transform: translate(-2px, 0px) rotate(0.5deg); 
+        transform: translate(-4px, 0px) rotate(0.5deg); 
     }
     40% { 
-        transform: translate(2px, -1px) rotate(-0.5deg); 
+        transform: translate(4px, -2px) rotate(-0.5deg); 
     }
     60% { 
-        transform: translate(-1px, 2px) rotate(0deg); 
+        transform: translate(-2px, 4px) rotate(0deg); 
     }
     80% { 
-        transform: translate(1px, -2px) rotate(0.5deg); 
+        transform: translate(2px, -4px) rotate(0.5deg); 
     }
     100% { 
-        transform: translate(-1px, 1px) rotate(0deg); 
+        transform: translate(-2px, 2px) rotate(0deg); 
     }
+}
+
+/* Кувшин */
+  #kuvshin:active {
+    cursor: grabbing;
+  }
+
+  #kuvshin.dragging {
+    transition: none;
+    cursor: grabbing;
+  }
+
+  #kuvshin.returning {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+  }
+
+/* Струя */
+#struia.str_visib {
+    opacity: 1;
 }
