@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const HANDS_DELAY = 5000;
     const HAND_INTERVAL = 1500;
 
-    // Начальное состояние
-    blood.classList.add("hidden");
 
     hand1.classList.add("hidden");
     hand2.classList.add("hidden");
