@@ -1,0 +1,40 @@
+/* Общие настройки изображений */
+.scene__img {
+    position: absolute;
+    height: auto;
+}
+
+/* Основной фон */
+#background-2 {
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Дверь */
+#door {
+    left: 32%;
+    top: 0;
+    width: 52.9%;
+    z-index: 2;
+
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+
+    transition:
+        opacity 2s ease,
+        visibility 0s linear 0s;
+}
+
+/* Дверь открыта */
+#door.hidden {
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+
+    transition:
+        opacity 2s ease,
+        visibility 0s linear 2s;
+}

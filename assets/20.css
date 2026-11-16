@@ -1,0 +1,40 @@
+/* Общие настройки изображений */
+.scene__img {
+    position: absolute;
+    height: auto;
+}
+
+/* Фоновое изображение */
+#background {
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Зеркала */
+#mirror-1,
+#mirror-2,
+#mirror-3 {
+    left: 10%;
+    top: 0;
+    width: 37%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#mirror-1 {
+    z-index: 2;
+}
+
+#mirror-2 {
+    left: 11%;
+    z-index: 3;
+    width: 36%;
+}
+
+#mirror-3 {
+    width: 38.5%;
+    z-index: 4;
+}
