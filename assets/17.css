@@ -1,0 +1,36 @@
+/* Фон */
+#background{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Верхняя клякса */
+#klyaksa1{
+    left: 15.6%;
+    top: 23.5%;
+    width: 34%;
+    z-index: 3;
+    cursor: pointer;
+
+    opacity: var(--opacity, 1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Нижняя клякса */
+#klyaksa2{
+    left: 39.7%;
+    top: 37.2%;
+    width: 44%;
+    z-index: 2;
+    cursor: pointer;
+    
+    opacity: var(--opacity, 1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Текст */
+#right_mark{
+    text-align: right;
+}

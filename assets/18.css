@@ -1,0 +1,59 @@
+/* Фон */
+#background{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Звезды слева направо вниз */
+#star1{
+    left: 0%;
+    top: 1.5%;
+    width: 37.19%;
+    z-index: 2;
+}
+
+#star2{
+    left: 55.5%;
+    top: 0;
+    width: 25.05%;
+    z-index: 2;
+}
+
+#star3{
+    left: 57%;
+    top: 37%;
+    width: 40.52%;
+    z-index: 2;
+}
+
+/* Глаза слева направо вниз */
+#eyes1{
+    left: 6%;
+    top: 6.5%;
+    width: 27.34%;
+    z-index: 3;
+}
+
+#eyes2{
+    left: 57%;
+    top: 3.5%;
+    width: 26%;
+    z-index: 3;
+}
+
+#eyes3{
+    left: 65%;
+    top: 48%;
+    width: 34.43%;
+    z-index: 3;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
